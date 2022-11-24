@@ -1,0 +1,138 @@
+.content__container {
+    padding: 0 clamp(30px, 11vw, 180px);
+}
+
+.content__container-news {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.news__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heading {
+    grid-column: 1/-1;
+}
+
+@media screen and ( max-width: 800px) {
+    .heading {
+        grid-column: 1/-1;
+    }
+
+    .heading {
+        flex-direction: column;
+    }
+}
+
+@media screen and ( min-width: 1314px) {
+    .heading {
+        grid-column: 1/-1;
+    }
+
+    .heading {
+        flex-direction: row;
+    }
+}
+
+@media screen and ( min-width: 1736px) {
+    .heading {
+        grid-column: 1/4;
+    }
+
+    .heading {
+        flex-direction: column;
+    }
+
+    .heading2 {
+        grid-column: 4/-1;
+    }
+
+    .heading2 {
+        flex-direction: column;
+    }
+
+    .news-info {
+        flex: 0 !important;
+    }
+}
+
+.news-thumbnail {
+    flex: 2;
+    max-height: 500px;
+    min-height: 180px;
+}
+
+.news-info {
+    flex: 1;
+}
+
+.news-thumbnail img {
+    border-radius: 10px;
+}
+
+.news__container-author-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 40%);
+}
+
+.dot {
+    height: 4px;
+    width: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 40%);
+}
+
+.news__container-title span {
+
+    font-size: 18px;
+    line-height: 35px;
+    color: white;
+}
+
+.news-container-description span {
+    font-size: 12px;
+    line-height: 25px;
+    color: rgba(255, 255, 255, 40%);
+}
+
+.news-conainer-author span {
+    font-size: 15px;
+    color: white;
+    word-wrap: break-word;
+    display: inline-block;
+    width: 200px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: auto;
+    display: flex;
+
+
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
