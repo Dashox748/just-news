@@ -15,11 +15,11 @@ Demo is limited to static generated data due to api limitations for commercial u
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Zimeek/SimpleShop.git
+   git clone https://github.com/Dashox748/just-news.git
    ```
 2. Move to direction
 ```sh
-   cd memory-game-react
+   cd just-news
    ```
 3. Install
 ```sh
