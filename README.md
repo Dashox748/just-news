@@ -14,7 +14,7 @@ Demo is limited to static generated data due to api limitations for commercial u
 ### Install
 
 1. Clone the repo
-   ```sh
+```sh
    git clone https://github.com/Dashox748/just-news.git
    ```
 2. Move to direction
