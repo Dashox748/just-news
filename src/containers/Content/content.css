@@ -76,6 +76,7 @@
 
 .news-thumbnail img {
     border-radius: 10px;
+    cursor:pointer;
 }
 
 .news__container-author-date {
@@ -98,6 +99,7 @@
     font-size: 18px;
     line-height: 35px;
     color: white;
+    cursor:pointer;
 }
 
 .news-container-description span {
