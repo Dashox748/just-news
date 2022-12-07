@@ -22,7 +22,7 @@ function Content() {
         <>
             <div className="content__container">
                 <div className="content__container-news">
-                    {data?.map((data: any, index: number) => (
+                    {data?.map((data: FetchNews, index: number) => (
                         <div
                             className={`news__container ${index === 0 ? "heading" : ""}${index === 1 ? "heading2" : ""}`}
                             key={index}>
