@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState,FormEvent} from "react";
 import "./header.css"
 import {Link, useNavigate} from "react-router-dom";
 
@@ -6,9 +6,9 @@ import {Link, useNavigate} from "react-router-dom";
 function Header() {
     const navigate = useNavigate();
     const [hamburgerToggle, setHamburgerToggle] = useState<boolean>(false)
-    const [openSearch, setOpenSearch] = useState(false)
+    const [openSearch, setOpenSearch] = useState<boolean>(false)
     const [input, setInput] = useState<string>("")
-    const handleSubmit = (e: any) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (input?.length !== 0 && openSearch) {
             navigate(`/search/${input}`);
@@ -21,12 +21,8 @@ function Header() {
             <div className="header__container">
                 <div className="header__container-hamburger">
                     <button className="button-toggle-hamburger" onClick={() => {
-                        setHamburgerToggle(!hamburgerToggle)
-
-                    }
-
+                        setHamburgerToggle(!hamburgerToggle)}
                     }>
-
                         <svg viewBox="0 0 100 100" className="hamburger-menu-svg">
                             <rect className={hamburgerToggle ? "open top" : ""}
                                 x="10" y="25"

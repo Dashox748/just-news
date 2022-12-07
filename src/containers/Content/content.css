@@ -22,6 +22,12 @@
     grid-column: 1/-1;
 }
 
+@media screen and ( max-width: 1314px) {
+    .news-info {
+        flex: 0 1 !important;
+    }
+}
+
 @media screen and ( max-width: 800px) {
     .heading {
         grid-column: 1/-1;
@@ -76,7 +82,7 @@
 
 .news-thumbnail img {
     border-radius: 10px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .news__container-author-date {
@@ -99,7 +105,7 @@
     font-size: 18px;
     line-height: 35px;
     color: white;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .news-container-description span {

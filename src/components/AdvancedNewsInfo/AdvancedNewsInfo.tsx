@@ -17,12 +17,11 @@ function AdvancedNewsInfo() {
                 <img src={location.state.urlToImage} alt="thumbnail"/>
             </div>
             <div className="advancedInfo__container-content">
-                <p>{location.state.content}
+                <div className="text">{location.state.content.split("\n").map((text: string) => <p>{text}</p>)}
                     <a href={location.state.url} target="_blank" rel="noreferrer">
                         <button className="learn-more">Learn more</button>
                     </a>
-                </p>
-
+                </div>
             </div>
         </div>
     )

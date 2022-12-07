@@ -15,7 +15,7 @@ Demo is limited to static generated data due to api limitations for commercial u
 
 1. Clone the repo
 ```sh
-   git clone https://github.com/Dashox748/fetch-form-app-task.git
+   git clone https://github.com/Dashox748/just-news
    ```
 2. Move to direction
 ```sh

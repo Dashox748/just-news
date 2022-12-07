@@ -5,30 +5,21 @@ import {
 } from 'react-query'
 import axios, {AxiosResponse} from "axios";
 import "./content.css"
-import temporaryData from "./data.json"
 import {FetchNews} from "../../utils/interfaces"
 
 function Content() {
     const navigate = useNavigate();
-    const routeParams = useParams();
+    const {category, keyword} = useParams<string>();
 
-
-    const {isLoading, data} = useQuery(['news-data', routeParams], () =>
-            axios.get<Array<FetchNews>>
-                //            fetch google for live demo due to api cors restrictions
-                //            ("www.google.com").then((res: AxiosResponse) => res.data.articles)
-                (`https://newsapi.org/v2/top-headlines?q=${routeParams.keyword ? routeParams.keyword : ""}&category=${routeParams.category ? routeParams.category : routeParams.keyword ? "" : "general"}&language=${routeParams.category ? "en" : routeParams.keyword ? "" : "en"}&sortBy=popularity&pageSize=40&apiKey=92cffcd19d2d4ed9968f4758d793bf6f`).then((res: AxiosResponse) => res.data.articles)
-        , {
-//            while on demo live to work on static generated data
-//            placeholderData: temporaryData,
-//            retry: 90
-        })
+    const {isLoading, data} = useQuery(['news-data', category, keyword], () =>
+        axios.get<Array<FetchNews>>
+        (`https://newsapi.org/v2/top-headlines?q=${keyword ? keyword : ""}&category=${category ? category : keyword ? "" : "general"}&language=${category ? "en" : keyword ? "" : "en"}&sortBy=popularity&pageSize=40&apiKey=92cffcd19d2d4ed9968f4758d793bf6f`).then((res: AxiosResponse) => res.data.articles)
+    )
     if (isLoading) {
         return <span className="loader"></span>
     }
     return (
         <>
-
             <div className="content__container">
                 <div className="content__container-news">
                     {data?.map((data: any, index: number) => (
