@@ -27,5 +27,5 @@ Demo is limited to static generated data due to api limitations for commercial u
    ```
 4. Run app
 ```sh
-   npm start
+   npm start 
    ```
